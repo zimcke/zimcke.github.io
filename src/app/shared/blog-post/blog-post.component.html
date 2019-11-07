@@ -1,0 +1,37 @@
+<div class="container">
+
+    <h2 class="mt-4 mb-3">{{postTitle}}
+        <small>by
+            <a [routerLink]="['/about']">Alexander Tang</a>
+        </small>
+    </h2>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+            <hr>
+
+            <p>Posted on {{postTimestamp | date}} at {{postTimestamp | date:'shortTime'}}</p>
+            <hr>
+
+            <ng-content></ng-content>
+            <hr>
+
+            <div class="card my-4">
+                <h5 class="card-header">E-mail a comment:</h5>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <cm-blog-sidebar></cm-blog-sidebar>
+        </div>
+    </div>
+</div>
