@@ -7,10 +7,12 @@ import {GraphqlComponent} from './post/graphql.component';
 import {RsaHsaComponent} from './post/rsa-hsa.component';
 import {ReactiveSpringComponent} from "./post/reactive-spring.component";
 import {MongodbComponent} from "./post/mongodb.component";
+import {SpringBootWebAppComponent} from './post/spring-boot-web-app.component';
 
 @NgModule({
     imports: [SharedModule, DeveloperBlogRoutingModule],
-    exports: [DeveloperBlogComponent, GraphqlComponent, RsaHsaComponent, ReactiveSpringComponent, MongodbComponent],
+    exports: [DeveloperBlogComponent, GraphqlComponent, RsaHsaComponent, ReactiveSpringComponent, MongodbComponent,
+    SpringBootWebAppComponent],
     declarations: [DeveloperBlogRoutingModule.components]
 })
 export class DeveloperBlogModule {
