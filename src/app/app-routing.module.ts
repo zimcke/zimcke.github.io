@@ -1,14 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
-import {NewsModule} from './navigationpages/news/news.module';
-import {BlogModule} from './navigationpages/blog/blog.module';
-import {AboutModule} from "./navigationpages/about/about.module";
-
 const app_routes: Routes = [
-    { path: '', data: {breadcrumb: 'Home'}, loadChildren: () => NewsModule },
-    { path: 'about', loadChildren: () => AboutModule },
-    { path: 'blogs', data: {breadcrumb: {skip: true}}, loadChildren: () => BlogModule },
+    { path: '', data: {breadcrumb: 'Home'}, loadChildren: () => import('./navigationpages/news/news.module').then(m => m.NewsModule) },
+    { path: 'about', loadChildren: () => import('./navigationpages/about/about.module').then(m => m.AboutModule) },
+    { path: 'blogs', data: {breadcrumb: {skip: true}}, loadChildren: () => import('./navigationpages/blog/blog.module').then(m => m.BlogModule) },
   { path: '**', redirectTo: '' } // catch any unfound routes and redirect to home page
 ];
 
