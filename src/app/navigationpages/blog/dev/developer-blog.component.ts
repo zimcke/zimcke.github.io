@@ -1,6 +1,5 @@
 'use strict';
 import {Component} from '@angular/core';
-import {Router} from '@angular/router';
 
 @Component({
     selector: 'cm-developer-blog',
@@ -8,5 +7,7 @@ import {Router} from '@angular/router';
 })
 export class DeveloperBlogComponent {
 
-    constructor(private router: Router) {}
+    blogTitle = 'Developer Blog';
+
+    constructor() {}
 }
