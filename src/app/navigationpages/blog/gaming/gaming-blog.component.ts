@@ -7,5 +7,7 @@ import {Component} from '@angular/core';
 })
 export class GamingBlogComponent {
 
+    blogTitle = 'Gaming Blog';
+
     constructor() {}
 }
