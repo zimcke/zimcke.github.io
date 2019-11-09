@@ -7,12 +7,11 @@ import { EnsureModuleLoadedOnceGuard } from './ensure-module-loaded-once.guard';
 import {MainHeaderComponent} from './mainheader/main-header.component';
 import {FooterComponent} from './footer/footer.component';
 import {BsDropdownModule} from 'ngx-bootstrap';
-import {BreadcrumbModule} from 'xng-breadcrumb';
 
 @NgModule({
-  imports: [CommonModule, RouterModule, HttpClientModule, HttpClientXsrfModule, BreadcrumbModule,
+  imports: [CommonModule, RouterModule, HttpClientModule, HttpClientXsrfModule,
       BsDropdownModule.forRoot()],
-  exports: [RouterModule, HttpClientModule, HttpClientXsrfModule, BreadcrumbModule,
+  exports: [RouterModule, HttpClientModule, HttpClientXsrfModule,
       MainHeaderComponent, FooterComponent],
   declarations: [MainHeaderComponent, FooterComponent],
   providers: [] // these should be singleton

@@ -3,12 +3,7 @@
 
     <div class="container">
         <br/>
-        <xng-breadcrumb>
-            <ng-container *xngBreadcrumbItem="let breadcrumb">
-                <!--<mat-icon *ngIf="info">{{ info }}</mat-icon>-->
-                <ng-container>{{ breadcrumb | capitalize }}</ng-container>
-            </ng-container>
-        </xng-breadcrumb>
+        <cm-custom-breadcrumb></cm-custom-breadcrumb>
         <router-outlet></router-outlet>
     </div>
 
