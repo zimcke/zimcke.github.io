@@ -3,11 +3,8 @@
     "version": "1.0.0",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve --open --open --ssl --aot true",
-        "prebuild": "ts-node -O '{\"module\": \"commonjs\"}' git.version.ts",
-        "build": "npm run prebuild && ng build --prod --base-href 'https://alexandertang.me' --aot --output-hashing=all && cp src/CNAME dist",
-        "build:gh": "ng build --prod --base-href https://AlexanderTang.github.io/AlexanderTang.github.io --aot",
-        "deploy": "ngh --no-silent --branch=master",
+        "build": "ng build --prod --base-href https://AlexanderTang.github.io --aot",
+        "deploy": "ngh --branch=master",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
