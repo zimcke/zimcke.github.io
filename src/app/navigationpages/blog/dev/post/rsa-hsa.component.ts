@@ -10,4 +10,10 @@ export class RsaHsaComponent {
     postTimestamp = new Date(2019, 11, 9);
 
     constructor() {}
+
+    postAbstract(): string {
+        return "When sending messages over a network, it is common that the authenticity of these messages needs \
+        to be validated. There are several methods available to ensure the content has not been tampered with. \
+        This article discusses two such methods, RSA and HSA, and their relative advantages.";
+    }
 }
