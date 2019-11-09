@@ -3,13 +3,14 @@
     <h2 class="mt-4 mb-3">{{postTitle}}</h2>
 
     <div class="row">
-        <div class="col-lg-8">
-            <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
-            <hr>
-
+        <div class="col-lg-9">
+            <div *ngIf="postImage">
+                <img class="img-fluid rounded" src="assets/images/{{postImage}}" alt="">
+                <hr>
+            </div>
             <p>Posted on {{postTimestamp | date:'longDate'}} by <a [routerLink]="['/about']">Alexander Tang</a></p>
             <hr>
-
+            <p class="lead">{{postAbstract}}</p>
             <ng-content></ng-content>
             <hr>
 
@@ -26,7 +27,7 @@
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
             <cm-blog-sidebar></cm-blog-sidebar>
         </div>
     </div>

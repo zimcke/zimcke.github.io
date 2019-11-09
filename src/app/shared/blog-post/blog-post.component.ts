@@ -9,6 +9,8 @@ export class BlogPostComponent {
 
     @Input() postTitle: string;
     @Input() postTimestamp: Date;
+    @Input() postAbstract: string;
+    @Input() postImage: string;
 
     constructor() {}
 }
