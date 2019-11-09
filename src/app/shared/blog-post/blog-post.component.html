@@ -1,17 +1,13 @@
 <div class="container">
 
-    <h2 class="mt-4 mb-3">{{postTitle}}
-        <small>by
-            <a [routerLink]="['/about']">Alexander Tang</a>
-        </small>
-    </h2>
+    <h2 class="mt-4 mb-3">{{postTitle}}</h2>
 
     <div class="row">
         <div class="col-lg-8">
             <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
             <hr>
 
-            <p>Posted on {{postTimestamp | date}} at {{postTimestamp | date:'shortTime'}}</p>
+            <p>Posted on {{postTimestamp | date:'longDate'}} by <a [routerLink]="['/about']">Alexander Tang</a></p>
             <hr>
 
             <ng-content></ng-content>
