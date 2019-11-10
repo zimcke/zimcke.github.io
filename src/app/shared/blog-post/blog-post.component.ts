@@ -8,9 +8,13 @@ import {Component, Input} from '@angular/core';
 export class BlogPostComponent {
 
     @Input() postTitle: string;
-    @Input() postTimestamp: Date;
+    @Input() postDate: Date;
     @Input() postAbstract: string;
-    @Input() postImage: string;
+    @Input() postImageName: string;
 
     constructor() {}
+
+    postImagePresent(): boolean {
+        return this.postImageName && this.postImageName !== '';
+    }
 }

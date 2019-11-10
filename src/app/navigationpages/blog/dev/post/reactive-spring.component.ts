@@ -1,12 +1,21 @@
 'use strict';
 import {Component} from '@angular/core';
-import {Router} from '@angular/router';
+import {AbstractBlogPost} from '../../../../core/model/AbstractBlogPost';
 
 @Component({
     selector: 'cm-reactive-spring',
     templateUrl: './reactive-spring.component.html'
 })
-export class ReactiveSpringComponent {
+export class ReactiveSpringComponent extends AbstractBlogPost {
+    postTitle(): string {
+        return undefined;
+    }
 
-    constructor() {}
+    postDate(): Date {
+        return undefined;
+    }
+
+    postAbstract(): string {
+        return undefined;
+    }
 }
