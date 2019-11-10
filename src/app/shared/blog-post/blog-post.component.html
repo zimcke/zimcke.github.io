@@ -4,11 +4,11 @@
 
     <div class="row">
         <div class="col-lg-9">
-            <div *ngIf="postImage">
-                <img class="img-fluid rounded" src="assets/images/{{postImage}}" alt="">
+            <div *ngIf="postImagePresent()">
+                <img class="img-fluid rounded" src="assets/images/{{postImageName}}" alt="">
                 <hr>
             </div>
-            <p>Posted on {{postTimestamp | date:'longDate'}} by <a [routerLink]="['/about']">Alexander Tang</a></p>
+            <p>Posted on {{postDate | date:'longDate'}} by <a [routerLink]="['/about']">Alexander Tang</a></p>
             <hr>
             <p class="lead">{{postAbstract}}</p>
             <ng-content></ng-content>

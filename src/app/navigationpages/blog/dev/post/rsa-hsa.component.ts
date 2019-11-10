@@ -1,15 +1,19 @@
 'use strict';
 import {Component} from '@angular/core';
+import {AbstractBlogPost} from '../../../../core/model/AbstractBlogPost';
 
 @Component({
     selector: 'cm-rsa-hsa',
     templateUrl: './rsa-hsa.component.html'
 })
-export class RsaHsaComponent {
-    postTitle = 'Difference between RSA and HSA';
-    postTimestamp = new Date(2019, 11, 9);
+export class RsaHsaComponent extends AbstractBlogPost{
 
-    constructor() {}
+    postTitle(): string {
+        return 'Difference between RSA and HSA';
+    }
+    postDate(): Date {
+        return new Date(2019, 11, 9);
+    }
 
     postAbstract(): string {
         return "When sending messages over a network, it is common that the authenticity of these messages needs \
