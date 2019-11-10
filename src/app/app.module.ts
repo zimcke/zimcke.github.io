@@ -17,7 +17,7 @@ import {CustomBreadcrumbModule} from './core/breadcrumb/custom-breadcrumb.module
         CustomBreadcrumbModule
     ],
     declarations: [AppComponent],
-    bootstrap: [AppComponent],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 
