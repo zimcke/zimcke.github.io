@@ -1,37 +1,54 @@
-## Welcome to GitHub Pages
+## GitHub Page - Alexander Tang
 
-You can use the [editor on GitHub](https://github.com/AlexanderTang/AlexanderTang.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This projects contains everything needed to build [my GitHub page](https://alexandertang.github.io/). My webpage will contain
+posts about anything that I would like to share with the outside world, such as technical guides, projects, gaming news and more.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+You are free to re-use the project template for personal use:
 
-### Markdown
+### Requirements
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+This project is built on:
 
-```markdown
-Syntax highlighted code block
+- Angular 8
+- nodeJS v10.16.3
 
-# Header 1
-## Header 2
-### Header 3
+You will also need:
 
-- Bulleted
-- List
+- angular CLI
+- [angular-cli-ghpages](https://www.npmjs.com/package/angular-cli-ghpages)
 
-1. Numbered
-2. List
+### Installation
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+Install the packages.
+```bash
+npm install
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Start a DEV server on `localhost:4200`
+```bash
+ng serve
+```
 
-### Jekyll Themes
+### Deploy
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/AlexanderTang/AlexanderTang.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+GitHub User pages can only deploy from the master branch, which will contain the dist folder at root level.
+It is recommended to use a different branch for your source files and deploy to your master branch.  The following
+steps show you how to do this.
 
-### Support or Contact
+From the ready-for-deploy branch (in my case **dev**), build the production dist folder.
+```bash
+npm run build
+```
+Do not forget to modify the --base-href flag
+to your own GitHub page URL, using the following convention: `https://[yourUsername].github.io`
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Use the angular-cli-ghpages tool to deploy. 
+```bash
+npm run deploy
+```
+It will deploy to a new/existing **ghpages** branch by default.  The additional flag in the `package.json`
+will correctly tell it to deploy to **master** instead. 
+
+If the tool gets stuck, then you probably need to save your git credentials in your local or
+global git config. It will get stuck on authentication but it will not prompt you nor will it break off the operation
+by itself in my experience.
