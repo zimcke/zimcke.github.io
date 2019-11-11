@@ -17,9 +17,22 @@
             <div class="card my-4">
                 <h5 class="card-header">E-mail a comment:</h5>
                 <div class="card-body">
-                    <form>
+                    <form (ngSubmit)="onSubmit()" #blogPostCommentForm="ngForm">
                         <div class="form-group">
-                            <textarea class="form-control" rows="3"></textarea>
+                            <input id="mailTitle"
+                                   name="mailTitle"
+                                   type="text"
+                                   [ngModel]="mailSubject()"
+                                   [readonly]="true"
+                                   class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="mailBody"
+                                      name="mailBody"
+                                      [(ngModel)]="mailBody"
+                                      class="form-control"
+                                      rows="3"
+                                      required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>

@@ -1,5 +1,8 @@
 'use strict';
-import {Component, Input} from '@angular/core';
+import {Component, Inject, Input} from '@angular/core';
+import {DOCUMENT} from '@angular/common';
+
+const mailtoLink = require('mailto-link');
 
 @Component({
     selector: 'cm-blog-post',
@@ -12,9 +15,23 @@ export class BlogPostComponent {
     @Input() postAbstract: string;
     @Input() postImageName: string;
 
-    constructor() {}
+    mailBody: string;
+
+    constructor(@Inject(DOCUMENT) private document: Document) {}
 
     postImagePresent(): boolean {
         return this.postImageName && this.postImageName !== '';
+    }
+
+    mailSubject(): string {
+        return 'Comment - ' + this.postTitle;
+    }
+
+    onSubmit(): void {
+        this.document.location.href = mailtoLink({
+            to: 'alexanderghtang@gmail.com',
+            subject: this.mailSubject(),
+            body: this.mailBody
+        });
     }
 }
