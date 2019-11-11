@@ -2,6 +2,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IBlogPost} from '../interfaces';
 import {ActivatedRoute, Router} from '@angular/router';
+import {BlogPostUtils} from '../../core/util/blogPostUtils';
 
 @Component({
     selector: 'cm-blog-overview',
@@ -13,7 +14,7 @@ export class BlogOverviewComponent implements OnInit {
     @Input() blogPosts: IBlogPost[] = [];
 
     currentPage: number;
-    pageSize: number = 2;
+    pageSize: number = 5;
 
     constructor(private activatedRoute: ActivatedRoute,
                 private router: Router) {
@@ -21,7 +22,7 @@ export class BlogOverviewComponent implements OnInit {
 
     ngOnInit(): void {
         this.blogPosts.sort((blogPost1: IBlogPost, blogPost2: IBlogPost) =>
-            this.compareBlogPostsByDate(blogPost1, blogPost2));
+            BlogPostUtils.compareBlogPostsByDate(blogPost1, blogPost2));
         this.initCurrentPage();
     }
 
@@ -65,15 +66,5 @@ export class BlogOverviewComponent implements OnInit {
             queryParams: {page: page},
             queryParamsHandling: 'merge'
         })
-    }
-
-    private compareBlogPostsByDate(blogPost1: IBlogPost, blogPost2: IBlogPost): number {
-        if (blogPost1.postDate == null) {
-            return 1;
-        }
-        if (blogPost2.postDate == null) {
-            return -1;
-        }
-        return blogPost2.postDate.getTime() - blogPost1.postDate.getTime();
     }
 }
