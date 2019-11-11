@@ -27,17 +27,5 @@ export class DeveloperBlogComponent implements OnInit{
                     postImageName: route.component.prototype.postImageName()
                 }
             })
-            .sort((blogPost1: IBlogPost, blogPost2: IBlogPost) =>
-                this.compareBlogPostsByDate(blogPost1, blogPost2));
-    }
-
-    private compareBlogPostsByDate(blogPost1: IBlogPost, blogPost2: IBlogPost): number {
-        if (blogPost1.postDate == null) {
-            return 1;
-        }
-        if (blogPost2.postDate == null) {
-            return -1;
-        }
-        return blogPost1.postDate.getTime() - blogPost2.postDate.getTime();
     }
 }

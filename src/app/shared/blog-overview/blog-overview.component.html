@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-md-9">
 
-        <div *ngFor="let post of blogPosts">
+        <div *ngFor="let post of blogPostsForCurrentPage()">
             <div class="card mb-4">
                 <img *ngIf="postImagePresent(post)"
                      class="card-img-top"
@@ -22,11 +22,11 @@
         </div>
 
         <ul class="pagination justify-content-center mb-4">
-            <li class="page-item">
-                <a class="page-link" href="#">&larr; Newer</a>
+            <li class="page-item" [ngClass]="{'disabled': !hasNewerPage()}">
+                <button type="button" class="page-link" (click)="previousPage()">&larr; Newer</button>
             </li>
-            <li class="page-item disabled">
-                <a class="page-link" href="#">Older &rarr;</a>
+            <li class="page-item" [ngClass]="{'disabled': !hasOlderPage()}">
+                <button type="button" class="page-link" (click)="nextPage()">Older &rarr;</button>
             </li>
         </ul>
     </div>
