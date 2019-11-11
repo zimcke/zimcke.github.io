@@ -12,9 +12,9 @@ export const routes: Routes = [
     {path: '', component: DeveloperBlogComponent},
     {path: 'graphql', data: {breadcrumb: 'GraphQL'}, component: GraphqlComponent},
     {path: 'rsa-hsa', data: {breadcrumb: 'RSA vs HSA'}, component: RsaHsaComponent},
-    {path: 'reactive-spring', data: {breadcrumb: 'Reactive Spring'}, component: ReactiveSpringComponent},
-    {path: 'mongodb', data: {breadcrumb: 'MongoDB'}, component: MongodbComponent},
-    {path: 'spring-boot-web-app', data: {breadcrumb: 'Spring Boot Web App'}, component: SpringBootWebAppComponent}
+    // {path: 'reactive-spring', data: {breadcrumb: 'Reactive Spring'}, component: ReactiveSpringComponent},
+    // {path: 'mongodb', data: {breadcrumb: 'MongoDB'}, component: MongodbComponent},
+    // {path: 'spring-boot-web-app', data: {breadcrumb: 'Spring Boot Web App'}, component: SpringBootWebAppComponent}
 ];
 
 @NgModule({

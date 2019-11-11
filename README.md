@@ -3,7 +3,7 @@
 This projects contains everything needed to build [my GitHub page](https://alexandertang.github.io/). My webpage will contain
 posts about anything that I would like to share with the outside world, such as technical guides, projects, gaming news and more.
 
-You are free to re-use the project template for personal use:
+You are free to re-use the project template.
 
 ### Requirements
 
@@ -52,3 +52,7 @@ will correctly tell it to deploy to **master** instead.
 If the tool gets stuck, then you probably need to save your git credentials in your local or
 global git config. It will get stuck on authentication but it will not prompt you nor will it break off the operation
 by itself in my experience.
+
+### Mentions
+
+My css styling is based on the template provided by [https://startbootstrap.com/templates/modern-business/](https://startbootstrap.com/templates/modern-business/)
