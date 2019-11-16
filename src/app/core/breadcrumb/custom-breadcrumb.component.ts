@@ -1,20 +1,24 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'app-custom-breadcrumb',
-  templateUrl: './custom-breadcrumb.component.html'
+    selector: 'app-custom-breadcrumb',
+    templateUrl: './custom-breadcrumb.component.html'
 })
 export class CustomBreadcrumbComponent {
 
-  constructor(private activatedRoute: ActivatedRoute) {}
+    private blacklistedPaths: string[] = [''];
 
-  hideBreadcrumb(): boolean {
-      try{
-          return this.activatedRoute.snapshot.firstChild.routeConfig.path === '';
-      } catch (e) {
-          return true;
-      }
-  }
+    constructor(private activatedRoute: ActivatedRoute) {
+    }
+
+    hideBreadcrumb(): boolean {
+        try {
+            return this.blacklistedPaths
+                .some((path: string) => path === this.activatedRoute.snapshot.firstChild.routeConfig.path);
+        } catch (e) {
+            return true;
+        }
+    }
 
 }

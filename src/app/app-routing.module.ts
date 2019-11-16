@@ -14,6 +14,10 @@ const APP_ROUTES: Routes = [
         path: 'blogs', data: {breadcrumb: {skip: true}},
         loadChildren: () => import('./navigationpages/blog/blog.module').then(m => m.BlogModule)
     },
+    {
+        path: 'search-results',
+        loadChildren: () => import('./navigationpages/search-results/search-results.module').then(m => m.SearchResultsModule)
+    },
     {path: '**', redirectTo: ''} // catch any unfound routes and redirect to home page
 ];
 
