@@ -1,7 +1,8 @@
 'use strict';
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IBlogPost} from '../../shared/interfaces';
-import {Route, Routes} from '@angular/router';
+import {BlogPostUtils} from '../../core/util/blogPostUtils';
+import {BlogRoutingService} from '../../core/service/blogRoutingService';
 
 @Component({
     selector: 'app-home',
@@ -11,8 +12,7 @@ export class HomeComponent implements OnInit {
 
     posts: IBlogPost[];
 
-    constructor(@Inject('DEV_ROUTES') private devRoutes: Routes,
-                @Inject('GAME_ROUTES') private gameRoutes: Routes) {
+    constructor(private blogRoutingService: BlogRoutingService) {
     }
 
     ngOnInit(): void {
@@ -20,20 +20,6 @@ export class HomeComponent implements OnInit {
     }
 
     private getAllPosts(): IBlogPost[] {
-        const allRoutes: Routes = [
-            ...this.devRoutes,
-            ...this.gameRoutes
-        ];
-        return allRoutes
-            .filter((route: Route) => route.path !== '')
-            .map((route: Route) => {
-                return {
-                    path: route.path,
-                    postTitle: route.component.prototype.postTitle(),
-                    postDate: route.component.prototype.postDate(),
-                    postAbstract: route.component.prototype.postAbstract(),
-                    postImageName: route.component.prototype.postImageName()
-                } as IBlogPost;
-            });
+        return BlogPostUtils.getBlogPostsFromRoutes(this.blogRoutingService.getAllRoutes());
     }
 }

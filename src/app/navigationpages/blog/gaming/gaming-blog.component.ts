@@ -1,7 +1,8 @@
 'use strict';
 import {Component, Inject} from '@angular/core';
 import {IBlogPost} from '../../../shared/interfaces';
-import {Route, Routes} from '@angular/router';
+import {Routes} from '@angular/router';
+import {BlogPostUtils} from '../../../core/util/blogPostUtils';
 
 @Component({
     selector: 'app-gaming-blog',
@@ -20,16 +21,6 @@ export class GamingBlogComponent {
     }
 
     private getGamingPosts(): IBlogPost[] {
-        return this.gameRoutes
-            .filter((route: Route) => route.path !== '')
-            .map((route: Route) => {
-                return {
-                    path: route.path,
-                    postTitle: route.component.prototype.postTitle(),
-                    postDate: route.component.prototype.postDate(),
-                    postAbstract: route.component.prototype.postAbstract(),
-                    postImageName: route.component.prototype.postImageName()
-                } as IBlogPost;
-            });
+        return BlogPostUtils.getBlogPostsFromRoutes(this.gameRoutes);
     }
 }

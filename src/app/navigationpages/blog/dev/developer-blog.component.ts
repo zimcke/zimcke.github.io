@@ -1,7 +1,8 @@
 'use strict';
 import {Component, Inject, OnInit} from '@angular/core';
-import {Route, Routes} from '@angular/router';
+import {Routes} from '@angular/router';
 import {IBlogPost} from '../../../shared/interfaces';
+import {BlogPostUtils} from '../../../core/util/blogPostUtils';
 
 @Component({
     selector: 'app-developer-blog',
@@ -20,16 +21,6 @@ export class DeveloperBlogComponent implements OnInit {
     }
 
     private getDeveloperPosts(): IBlogPost[] {
-        return this.devRoutes
-            .filter((route: Route) => route.path !== '')
-            .map((route: Route) => {
-                return {
-                    path: route.path,
-                    postTitle: route.component.prototype.postTitle(),
-                    postDate: route.component.prototype.postDate(),
-                    postAbstract: route.component.prototype.postAbstract(),
-                    postImageName: route.component.prototype.postImageName()
-                } as IBlogPost;
-            });
+        return BlogPostUtils.getBlogPostsFromRoutes(this.devRoutes);
     }
 }

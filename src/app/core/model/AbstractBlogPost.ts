@@ -1,4 +1,5 @@
 'use strict';
+import {PostCategory} from '../enum/postCategory';
 
 export abstract class AbstractBlogPost {
 
@@ -9,6 +10,8 @@ export abstract class AbstractBlogPost {
     abstract postDate(): Date;
 
     abstract postAbstract(): string;
+
+    abstract postCategories(): PostCategory[];
 
     postImageName(): string {
         return '';
