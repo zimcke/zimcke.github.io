@@ -3,7 +3,7 @@ import {Component} from '@angular/core';
 import {AbstractBlogPost} from '../../../../core/model/AbstractBlogPost';
 
 @Component({
-    selector: 'cm-graph-ql',
+    selector: 'app-graph-ql',
     templateUrl: './graphql.component.html'
 })
 export class GraphqlComponent extends AbstractBlogPost {

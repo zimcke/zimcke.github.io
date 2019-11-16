@@ -8,7 +8,7 @@ import {ReactiveSpringComponent} from './post/reactive-spring.component';
 import {MongodbComponent} from './post/mongodb.component';
 import {SpringBootWebAppComponent} from './post/spring-boot-web-app.component';
 
-export const routes: Routes = [
+export const DEV_BLOG_ROUTES: Routes = [
     {path: '', component: DeveloperBlogComponent},
     {path: 'graphql', data: {breadcrumb: 'GraphQL'}, component: GraphqlComponent},
     {path: 'rsa-hsa', data: {breadcrumb: 'RSA vs HSA'}, component: RsaHsaComponent},
@@ -18,7 +18,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
+    imports: [RouterModule.forChild(DEV_BLOG_ROUTES)],
     exports: [RouterModule]
 })
 export class DeveloperBlogRoutingModule {
