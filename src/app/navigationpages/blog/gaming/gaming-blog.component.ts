@@ -2,7 +2,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-    selector: 'cm-gaming-blog',
+    selector: 'app-gaming-blog',
     templateUrl: './gaming-blog.component.html'
 })
 export class GamingBlogComponent {

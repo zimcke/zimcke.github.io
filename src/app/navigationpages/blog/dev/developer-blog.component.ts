@@ -4,7 +4,7 @@ import {Route, Routes} from '@angular/router';
 import {IBlogPost} from '../../../shared/interfaces';
 
 @Component({
-    selector: 'cm-developer-blog',
+    selector: 'app-developer-blog',
     templateUrl: './developer-blog.component.html'
 })
 export class DeveloperBlogComponent implements OnInit{

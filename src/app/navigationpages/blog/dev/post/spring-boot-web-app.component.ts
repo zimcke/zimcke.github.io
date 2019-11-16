@@ -3,7 +3,7 @@ import {Component} from '@angular/core';
 import {AbstractBlogPost} from '../../../../core/model/AbstractBlogPost';
 
 @Component({
-    selector: 'cm-spring-boot-web-app',
+    selector: 'app-spring-boot-web-app',
     templateUrl: './spring-boot-web-app.component.html'
 })
 export class SpringBootWebAppComponent extends AbstractBlogPost {

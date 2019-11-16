@@ -3,7 +3,7 @@ import {Component} from '@angular/core';
 import {AbstractBlogPost} from '../../../../core/model/AbstractBlogPost';
 
 @Component({
-    selector: 'cm-rsa-hsa',
+    selector: 'app-rsa-hsa',
     templateUrl: './rsa-hsa.component.html'
 })
 export class RsaHsaComponent extends AbstractBlogPost{

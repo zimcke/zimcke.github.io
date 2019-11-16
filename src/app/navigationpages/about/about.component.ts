@@ -5,7 +5,7 @@ import {DOCUMENT} from '@angular/common';
 const mailtoLink = require('mailto-link');
 
 @Component({
-    selector: 'cm-about',
+    selector: 'app-about',
     templateUrl: './about.component.html'
 })
 export class AboutComponent {

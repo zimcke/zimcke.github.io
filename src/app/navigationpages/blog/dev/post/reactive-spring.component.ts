@@ -3,7 +3,7 @@ import {Component} from '@angular/core';
 import {AbstractBlogPost} from '../../../../core/model/AbstractBlogPost';
 
 @Component({
-    selector: 'cm-reactive-spring',
+    selector: 'app-reactive-spring',
     templateUrl: './reactive-spring.component.html'
 })
 export class ReactiveSpringComponent extends AbstractBlogPost {

@@ -2,10 +2,10 @@
 import {Component} from '@angular/core';
 
 @Component({
-    selector: 'cm-news',
-    templateUrl: './news.component.html'
+    selector: 'app-home',
+    templateUrl: './home.component.html'
 })
-export class NewsComponent {
+export class HomeComponent {
 
     constructor() {}
 }

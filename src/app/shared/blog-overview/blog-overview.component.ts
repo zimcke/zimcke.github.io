@@ -5,7 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {BlogPostUtils} from '../../core/util/blogPostUtils';
 
 @Component({
-    selector: 'cm-blog-overview',
+    selector: 'app-blog-overview',
     templateUrl: './blog-overview.component.html'
 })
 export class BlogOverviewComponent implements OnInit {
