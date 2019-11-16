@@ -7,6 +7,7 @@ import { EnsureModuleLoadedOnceGuard } from './ensure-module-loaded-once.guard';
 import {MainHeaderComponent} from './mainheader/main-header.component';
 import {FooterComponent} from './footer/footer.component';
 import {BsDropdownModule} from 'ngx-bootstrap';
+import {BlogRoutingService} from './service/blogRoutingService';
 
 @NgModule({
   imports: [CommonModule, RouterModule, HttpClientModule, HttpClientXsrfModule,
@@ -14,7 +15,7 @@ import {BsDropdownModule} from 'ngx-bootstrap';
   exports: [RouterModule, HttpClientModule, HttpClientXsrfModule,
       MainHeaderComponent, FooterComponent],
   declarations: [MainHeaderComponent, FooterComponent],
-  providers: [] // these should be singleton
+  providers: [BlogRoutingService] // these should be singleton
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {    // Ensure that CoreModule is only loaded into AppModule
 
