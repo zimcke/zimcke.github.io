@@ -1,9 +1,11 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {GamingBlogComponent} from './gaming-blog.component';
+import {PlaceholderComponent} from './post/placeholder.component';
 
-const GAME_BLOG_ROUTES: Routes = [
-    {path: '', component: GamingBlogComponent}
+export const GAME_BLOG_ROUTES: Routes = [
+    {path: '', component: GamingBlogComponent},
+    {path: 'placeholder', data: {breadcrumb: 'Placeholder'}, component: PlaceholderComponent}
 ];
 
 @NgModule({
@@ -11,5 +13,5 @@ const GAME_BLOG_ROUTES: Routes = [
     exports: [RouterModule]
 })
 export class GamingBlogRoutingModule {
-    static components = [GamingBlogComponent];
+    static components = [GamingBlogComponent, PlaceholderComponent];
 }

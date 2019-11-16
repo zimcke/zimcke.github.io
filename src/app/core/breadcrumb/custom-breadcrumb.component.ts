@@ -1,16 +1,20 @@
 import { Component } from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'cm-custom-breadcrumb',
+  selector: 'app-custom-breadcrumb',
   templateUrl: './custom-breadcrumb.component.html'
 })
 export class CustomBreadcrumbComponent {
 
-  constructor(private router: Router) {}
+  constructor(private activatedRoute: ActivatedRoute) {}
 
   hideBreadcrumb(): boolean {
-      return this.router.url === '/';
+      try{
+          return this.activatedRoute.snapshot.firstChild.routeConfig.path === '';
+      } catch (e) {
+          return true;
+      }
   }
 
 }
