@@ -7,7 +7,7 @@ import {IBlogPost} from '../../../shared/interfaces';
     selector: 'app-developer-blog',
     templateUrl: './developer-blog.component.html'
 })
-export class DeveloperBlogComponent implements OnInit{
+export class DeveloperBlogComponent implements OnInit {
 
     blogTitle = 'Developer Blog';
     posts: IBlogPost[];
@@ -16,16 +16,20 @@ export class DeveloperBlogComponent implements OnInit{
     }
 
     ngOnInit(): void {
-        this.posts = this.devRoutes
+        this.posts = this.getDeveloperPosts();
+    }
+
+    private getDeveloperPosts(): IBlogPost[] {
+        return this.devRoutes
             .filter((route: Route) => route.path !== '')
             .map((route: Route) => {
-                return <IBlogPost>{
+                return {
                     path: route.path,
                     postTitle: route.component.prototype.postTitle(),
                     postDate: route.component.prototype.postDate(),
                     postAbstract: route.component.prototype.postAbstract(),
                     postImageName: route.component.prototype.postImageName()
-                }
-            })
+                } as IBlogPost;
+            });
     }
 }
