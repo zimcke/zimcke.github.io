@@ -1,50 +1,12 @@
 'use strict';
-import {Component, OnInit} from '@angular/core';
-import {BlogRoutingService} from '../../core/service/blogRoutingService';
-import {IBlogPost} from '../interfaces';
-import {PostCategory} from '../../core/enum/postCategory';
+import {Component} from '@angular/core';
 
 @Component({
     selector: 'app-blog-sidebar',
     templateUrl: './blog-sidebar.component.html'
 })
-export class BlogSidebarComponent implements OnInit {
+export class BlogSidebarComponent {
 
-    private categoryFrequencyMap: Map<PostCategory, number> = new Map();
-
-    constructor(private blogRoutingService: BlogRoutingService) {
-    }
-
-    ngOnInit(): void {
-        this.initCategoryFrequencyMap();
-    }
-
-    getTop6Categories(): Map<PostCategory, number> {
-        return new Map([...this.categoryFrequencyMap]
-            .sort((categoryEntry1, categoryEntry2) => {
-                return categoryEntry2[1] - categoryEntry1[1]; // sort by category frequency in DESC order
-            })
-            .slice(0, 6));
-    }
-
-    getEnumString(number: number): string {
-        return PostCategory[number];
-    }
-
-    searchCategory(category: PostCategory): void {
-
-    }
-
-    private initCategoryFrequencyMap(): void {
-        this.blogRoutingService.getAllBlogPosts()
-            .map((blogPost: IBlogPost) => blogPost.postCategories)
-            .reduce((previousValue, currentValue) => previousValue.concat(currentValue), []) // replacement for flatMap..
-            .forEach((postCategory: PostCategory) => {
-                if (this.categoryFrequencyMap.has(postCategory)) {
-                    this.categoryFrequencyMap.set(postCategory, this.categoryFrequencyMap.get(postCategory) + 1);
-                } else {
-                    this.categoryFrequencyMap.set(postCategory, 1);
-                }
-            });
+    constructor() {
     }
 }
