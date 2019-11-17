@@ -1,5 +1,5 @@
 'use strict';
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {IBlogPost} from '../../shared/interfaces';
 import {BlogRoutingService} from '../../core/service/blogRoutingService';
 import {ActivatedRoute} from '@angular/router';
@@ -9,25 +9,18 @@ import {PostCategory} from '../../core/enum/postCategory';
     selector: 'app-search-results',
     templateUrl: './search-results.component.html'
 })
-export class SearchResultsComponent implements OnInit {
+export class SearchResultsComponent {
 
     title: string = 'Search results';
-    posts: IBlogPost[];
 
     constructor(private activatedRoute: ActivatedRoute,
                 private blogRoutingService: BlogRoutingService) {
     }
 
-    ngOnInit(): void {
-        this.posts = this.getMatchingPosts();
-    }
-
-    private getMatchingPosts(): IBlogPost[] {
+    getMatchingPosts(): IBlogPost[] {
         let blogPostsFromRoutes: IBlogPost[] = this.blogRoutingService.getAllBlogPosts();
-        let category: PostCategory = +this.activatedRoute.snapshot.queryParamMap.get('category');
-        if (category != null) {
-            blogPostsFromRoutes = this.filterByQueryParameterCategory(blogPostsFromRoutes);
-        }
+        blogPostsFromRoutes = this.filterByQueryParameterCategory(blogPostsFromRoutes);
+        blogPostsFromRoutes = this.filterByQueryParameterSearchTerm(blogPostsFromRoutes);
         return blogPostsFromRoutes;
     }
 
@@ -37,7 +30,19 @@ export class SearchResultsComponent implements OnInit {
             return blogPosts;
         }
         return blogPosts
-            .filter((blogPost: IBlogPost) => blogPost.postCategories
-                .some((postCategory: PostCategory) => postCategory === category));
+            .filter((blogPost: IBlogPost) =>
+                blogPost.postCategories.some((postCategory: PostCategory) => postCategory === category));
+    }
+
+    private filterByQueryParameterSearchTerm(blogPosts: IBlogPost[]): IBlogPost[] {
+        let searchTerm: string = this.activatedRoute.snapshot.queryParamMap.get('search-term');
+        if (searchTerm == null) {
+            return blogPosts;
+        }
+        return blogPosts
+            .filter((blogPost: IBlogPost) =>
+                (blogPost.postTitle && blogPost.postTitle.toLowerCase().includes(searchTerm.toLowerCase())) ||
+                (blogPost.postAbstract && blogPost.postAbstract.toLowerCase().includes(searchTerm.toLowerCase()))
+            );
     }
 }
