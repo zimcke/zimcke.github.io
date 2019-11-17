@@ -1,7 +1,6 @@
 'use strict';
 import {Component, Inject, OnInit} from '@angular/core';
-import {Routes} from '@angular/router';
-import {IBlogPost} from '../../../shared/interfaces';
+import {IBlogPost, RoutesWithPathPrefix} from '../../../shared/interfaces';
 import {BlogPostUtils} from '../../../core/util/blogPostUtils';
 
 @Component({
@@ -13,7 +12,7 @@ export class DeveloperBlogComponent implements OnInit {
     blogTitle = 'Developer Blog';
     posts: IBlogPost[];
 
-    constructor(@Inject('DEV_ROUTES') private devRoutes: Routes) {
+    constructor(@Inject('DEV_ROUTES') private devRoutes: RoutesWithPathPrefix) {
     }
 
     ngOnInit(): void {

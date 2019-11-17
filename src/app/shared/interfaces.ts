@@ -1,4 +1,5 @@
 import {PostCategory} from '../core/enum/postCategory';
+import {Routes} from '@angular/router';
 
 export interface IBlogPost {
     path: string;
@@ -7,4 +8,9 @@ export interface IBlogPost {
     postAbstract: string;
     postCategories: PostCategory[];
     postImageName: string;
+}
+
+export interface RoutesWithPathPrefix {
+    routes: Routes;
+    pathPrefix: string;
 }

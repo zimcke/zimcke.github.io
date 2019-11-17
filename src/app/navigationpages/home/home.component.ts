@@ -1,7 +1,6 @@
 'use strict';
 import {Component, OnInit} from '@angular/core';
 import {IBlogPost} from '../../shared/interfaces';
-import {BlogPostUtils} from '../../core/util/blogPostUtils';
 import {BlogRoutingService} from '../../core/service/blogRoutingService';
 
 @Component({
@@ -20,6 +19,6 @@ export class HomeComponent implements OnInit {
     }
 
     private getAllPosts(): IBlogPost[] {
-        return BlogPostUtils.getBlogPostsFromRoutes(this.blogRoutingService.getAllRoutes());
+        return this.blogRoutingService.getAllBlogPosts();
     }
 }

@@ -1,6 +1,6 @@
 'use strict';
-import {IBlogPost} from '../../shared/interfaces';
-import {Route, Routes} from '@angular/router';
+import {IBlogPost, RoutesWithPathPrefix} from '../../shared/interfaces';
+import {Route} from '@angular/router';
 
 export class BlogPostUtils {
 
@@ -14,12 +14,12 @@ export class BlogPostUtils {
         return blogPost2.postDate.getTime() - blogPost1.postDate.getTime();
     }
 
-    public static getBlogPostsFromRoutes(routes: Routes): IBlogPost[] {
-        return routes
+    public static getBlogPostsFromRoutes(routesWithPathPrefix: RoutesWithPathPrefix): IBlogPost[] {
+        return routesWithPathPrefix.routes
             .filter((route: Route) => route.path !== '')
             .map((route: Route) => {
                 return {
-                    path: route.path,
+                    path: routesWithPathPrefix.pathPrefix + route.path,
                     postTitle: route.component.prototype.postTitle(),
                     postDate: route.component.prototype.postDate(),
                     postAbstract: route.component.prototype.postAbstract(),

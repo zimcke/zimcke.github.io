@@ -1,7 +1,6 @@
 'use strict';
 import {Component, Inject} from '@angular/core';
-import {IBlogPost} from '../../../shared/interfaces';
-import {Routes} from '@angular/router';
+import {IBlogPost, RoutesWithPathPrefix} from '../../../shared/interfaces';
 import {BlogPostUtils} from '../../../core/util/blogPostUtils';
 
 @Component({
@@ -13,7 +12,7 @@ export class GamingBlogComponent {
     blogTitle = 'Gaming Blog';
     posts: IBlogPost[];
 
-    constructor(@Inject('GAME_ROUTES') private gameRoutes: Routes) {
+    constructor(@Inject('GAME_ROUTES') private gameRoutes: RoutesWithPathPrefix) {
     }
 
     ngOnInit(): void {

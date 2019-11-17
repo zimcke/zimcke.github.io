@@ -1,7 +1,6 @@
 'use strict';
 import {Component, OnInit} from '@angular/core';
 import {BlogRoutingService} from '../../core/service/blogRoutingService';
-import {BlogPostUtils} from '../../core/util/blogPostUtils';
 import {IBlogPost} from '../interfaces';
 import {PostCategory} from '../../core/enum/postCategory';
 
@@ -37,7 +36,7 @@ export class BlogSidebarComponent implements OnInit {
     }
 
     private initCategoryFrequencyMap(): void {
-        BlogPostUtils.getBlogPostsFromRoutes(this.blogRoutingService.getAllRoutes())
+        this.blogRoutingService.getAllBlogPosts()
             .map((blogPost: IBlogPost) => blogPost.postCategories)
             .reduce((previousValue, currentValue) => previousValue.concat(currentValue), []) // replacement for flatMap..
             .forEach((postCategory: PostCategory) => {
