@@ -25,10 +25,11 @@ export class SearchResultsComponent {
     }
 
     private filterByQueryParameterCategory(blogPosts: IBlogPost[]): IBlogPost[] {
-        let category: PostCategory = +this.activatedRoute.snapshot.queryParamMap.get('category');
-        if (category == null) {
+        const categoryParameter: string = this.activatedRoute.snapshot.queryParamMap.get('category');
+        if (categoryParameter == null) {
             return blogPosts;
         }
+        const category: PostCategory = +categoryParameter;
         return blogPosts
             .filter((blogPost: IBlogPost) =>
                 blogPost.postCategories.some((postCategory: PostCategory) => postCategory === category));
