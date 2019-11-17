@@ -1,7 +1,6 @@
 'use strict';
 import {Component, OnInit} from '@angular/core';
 import {IBlogPost} from '../../shared/interfaces';
-import {BlogPostUtils} from '../../core/util/blogPostUtils';
 import {BlogRoutingService} from '../../core/service/blogRoutingService';
 import {ActivatedRoute} from '@angular/router';
 import {PostCategory} from '../../core/enum/postCategory';
@@ -24,7 +23,7 @@ export class SearchResultsComponent implements OnInit {
     }
 
     private getMatchingPosts(): IBlogPost[] {
-        let blogPostsFromRoutes = BlogPostUtils.getBlogPostsFromRoutes(this.blogRoutingService.getAllRoutes());
+        let blogPostsFromRoutes: IBlogPost[] = this.blogRoutingService.getAllBlogPosts();
         let category: PostCategory = +this.activatedRoute.snapshot.queryParamMap.get('category');
         if (category != null) {
             blogPostsFromRoutes = this.filterByQueryParameterCategory(blogPostsFromRoutes);

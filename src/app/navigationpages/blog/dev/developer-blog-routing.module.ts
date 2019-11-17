@@ -7,8 +7,9 @@ import {RsaHsaComponent} from './post/rsa-hsa.component';
 import {ReactiveSpringComponent} from './post/reactive-spring.component';
 import {MongodbComponent} from './post/mongodb.component';
 import {SpringBootWebAppComponent} from './post/spring-boot-web-app.component';
+import {RoutesWithPathPrefix} from '../../../shared/interfaces';
 
-export const DEV_BLOG_ROUTES: Routes = [
+const ROUTES: Routes = [
     {path: '', component: DeveloperBlogComponent},
     {path: 'graphql', data: {breadcrumb: 'GraphQL'}, component: GraphqlComponent},
     {path: 'rsa-hsa', data: {breadcrumb: 'RSA vs HSA'}, component: RsaHsaComponent},
@@ -17,8 +18,13 @@ export const DEV_BLOG_ROUTES: Routes = [
     // {path: 'spring-boot-web-app', data: {breadcrumb: 'Spring Boot Web App'}, component: SpringBootWebAppComponent}
 ];
 
+export const DEV_BLOG_ROUTES: RoutesWithPathPrefix = {
+    routes: ROUTES,
+    pathPrefix: '/blogs/dev/'
+};
+
 @NgModule({
-    imports: [RouterModule.forChild(DEV_BLOG_ROUTES)],
+    imports: [RouterModule.forChild(ROUTES)],
     exports: [RouterModule]
 })
 export class DeveloperBlogRoutingModule {
