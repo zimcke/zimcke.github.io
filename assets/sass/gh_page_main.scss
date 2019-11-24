@@ -6,3 +6,25 @@ $fa-font-path: "~font-awesome/fonts";
 
 @import "util/sizes";
 @import "util/breadcrumb";
+
+.btn-primary {
+    background-color: #8EB897;
+    border-color: #8EB897;
+}
+
+.btn-secondary {
+    background-color: #8EB897;
+    border-color: #8EB897;
+}
+
+a {
+  color: #6FC48A;  
+}
+
+a:hover {
+    color: #C3E8BD;
+}
+
+.bg-dark {
+    background-color: #6B415B !important;
+}
