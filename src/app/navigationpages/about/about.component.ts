@@ -14,7 +14,7 @@ export class AboutComponent {
 
     mailTo(): void {
         this.document.location.href = mailtoLink({
-            to: 'alexanderghtang@gmail.com'
+            to: 'zimcke@gmail.com'
         });
     }
 }
