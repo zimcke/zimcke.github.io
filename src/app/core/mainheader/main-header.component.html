@@ -9,7 +9,7 @@
 
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown" dropdown>
+                <!-- <li class="nav-item dropdown" dropdown>
                     <a href
                        dropdownToggle
                        (click)="false"
@@ -30,7 +30,10 @@
                            [queryParams]="{page: 1}"
                            routerLinkActive="active">Gaming Blog</a>
                     </div>
-                </li>
+                </li> -->
+                <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/bio']" routerLinkActive="active">Bio</a>
+                    </li>
                 <li class="nav-item">
                     <a class="nav-link" [routerLink]="['/about']" routerLinkActive="active">About</a>
                 </li>
