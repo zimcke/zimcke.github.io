@@ -6,6 +6,11 @@ import {Component} from '@angular/core';
     templateUrl: './main-header.component.html'
 })
 export class MainHeaderComponent {
+    mainHeadersCollapsed: boolean = true;
 
     constructor() {}
+
+    public toggleMainHeadersCollapsed(): void {
+        this.mainHeadersCollapsed = !this.mainHeadersCollapsed;
+    }
 }
