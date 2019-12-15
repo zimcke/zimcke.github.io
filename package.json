@@ -1,9 +1,9 @@
 {
-    "name": "AlexanderTang",
+    "name": "ZimckeVandeStaey",
     "version": "1.0.0",
     "scripts": {
         "ng": "ng",
-        "build": "ng build --prod --base-href https://AlexanderTang.github.io --aot",
+        "build": "ng build --prod --base-href https://zimcke.github.io --aot",
         "deploy": "ngh --branch=master",
         "test": "ng test",
         "lint": "ng lint",
