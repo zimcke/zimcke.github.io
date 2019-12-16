@@ -1,28 +1,61 @@
-<app-blog-post>
-    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut,
-        error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae
-        laborum minus inventore?</p>
+<app-blog-post
+    [postTitle]="postTitle()"
+    [postDate]="postDate()"
+    [postAbstract]="postAbstract()">
+    
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste
-        ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus,
-        voluptatibus.</p>
+    <div class="row">
+            <div class="col-lg-3">
+                <!-- <img class="img-fluid rounded mb-4" src="assets/images/zimcke.jpg" alt="Me"> -->
+            </div>
+            <div class="col-lg-9">
+                <p class='p-spaced'>
+                    One of my favorite online media channels about Asian culture is Asian boss. Asian boss is an online community that gathers 
+                    freelance journalists from multiple Asian countries, such as China, Korea, Japan, Malaysia, etc. In each video, they focus on a
+                    specific topic, asking local people to express their opinion on it and thus bringing quite an authentic testimony to the global public.
+                    This, I deem very valuable, because the general media seems very biased when they bring news from Asia.
+                    I remember seeing a video about how well people know the [fill in] of Chinese characters: 
+                </p>
+            </div>
+    </div>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde
-        eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis.
-        Enim, iure!</p>
+    <div class="row">
+            <div class="col-lg-3">
+                <!-- <img class="img-fluid rounded mb-4" src="assets/images/zimcke.jpg" alt="Me"> -->
+            </div>
+            <div class="col-lg-9">
+                [add video]
+            </div>
+    </div>
 
-    <blockquote class="blockquote">
-        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
-            ante.</p>
-        <footer class="blockquote-footer">Someone famous in
-            <cite title="Source Title">Source Title</cite>
-        </footer>
-    </blockquote>
+    <div class="row">
+            <div class="col-lg-3">
+                <!-- <img class="img-fluid rounded mb-4" src="assets/images/zimcke.jpg" alt="Me"> -->
+            </div>
+            <div class="col-lg-9">
+                <p class='p-spaced'>
+                        At first, you might think that the girl in the video is extremely naive, but is that really the case? If we want to understand 
+                        her reasoning better, we need to dive deeper into how the Chinese language works. 
+                        The basis of the Chinese written language was already present during the Shang dynasty between 1600 B.C. and 1027 B.C. 
+                        We know this from inscriptions on bronze vessels and oracle bones. 
+                        A portion of Chinese characters were conceived as depections of existing objects or scenes and at that time they were still relatively
+                        recognizable. An example of this is shown on the left. [find example and explain the etymology]. However, this is not 
+                        the largest category of Chinese characters. Besides pictograms, there are also [insert] that are combinations of multiple 
+                        characters. 
+                        These characters often contain another character that might suggest the reader what the proper pronunciation ressembles like. 
+                        
+                </p>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat
-        totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam
-        tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae?
-        Qui, necessitatibus, est!</p>
+                <blockquote class="blockquote">
+                        <p class="mb-0">The failure of the Chinese to develop a wholly phonetic script shows that the existing system, 
+                            complex as it is, was adequate to their purposed. </p>
+                        <footer class="blockquote-footer">Conrad Schirokauer in
+                            <cite title="Source Title">A Brief History of Chinese Civilization</cite>, [year].
+                        </footer>
+                </blockquote>
+            </div>
+    </div>
+
+
 </app-blog-post>

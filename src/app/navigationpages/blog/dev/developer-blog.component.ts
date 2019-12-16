@@ -9,7 +9,7 @@ import {BlogPostUtils} from '../../../core/util/blogPostUtils';
 })
 export class DeveloperBlogComponent implements OnInit {
 
-    blogTitle = 'Developer Blog';
+    blogTitle = 'Blog';
     posts: IBlogPost[];
 
     constructor(@Inject('DEV_ROUTES') private devRoutes: RoutesWithPathPrefix) {

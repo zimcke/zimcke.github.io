@@ -5,21 +5,22 @@ import {GAME_BLOG_ROUTES} from '../../navigationpages/blog/gaming/gaming-blog-ro
 import {IBlogPost, RoutesWithPathPrefix} from '../../shared/interfaces';
 import {BlogPostUtils} from '../util/blogPostUtils';
 import { NONE_TYPE } from '@angular/compiler/src/output/output_ast';
+import { CHINESE_BLOG_ROUTES } from 'src/app/navigationpages/blog/chinese/chinese-blog-routing.module';
 
 @Injectable()
 export class BlogRoutingService {
 
     public getAllBlogPosts(): IBlogPost[] {
-        return;
-        // return this.getAllRoutes()
-        //     .map((routes: RoutesWithPathPrefix) => BlogPostUtils.getBlogPostsFromRoutes(routes))
-        //     .reduce((previousValue, currentValue) => previousValue.concat(currentValue), []);
+        return this.getAllRoutes()
+            .map((routes: RoutesWithPathPrefix) => BlogPostUtils.getBlogPostsFromRoutes(routes))
+            .reduce((previousValue, currentValue) => previousValue.concat(currentValue), []);
     }
 
     public getAllRoutes(): RoutesWithPathPrefix[] {
         return [
             DEV_BLOG_ROUTES,
-            GAME_BLOG_ROUTES
+            GAME_BLOG_ROUTES,
+            CHINESE_BLOG_ROUTES
         ];
     }
 }

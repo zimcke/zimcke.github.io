@@ -15,6 +15,10 @@ const APP_ROUTES: Routes = [
         loadChildren: () => import('./navigationpages/bio/bio.module').then(m => m.BioModule)
     },
     {
+        path: 'publications',
+        loadChildren: () => import('./navigationpages/publications/publications.module').then(m => m.PublicationsModule)
+    },
+    {
         path: 'blogs', data: {breadcrumb: {skip: true}},
         loadChildren: () => import('./navigationpages/blog/blog.module').then(m => m.BlogModule)
     },

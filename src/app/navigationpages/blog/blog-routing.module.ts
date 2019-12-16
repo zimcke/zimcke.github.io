@@ -3,14 +3,18 @@ import {RouterModule, Routes} from '@angular/router';
 
 const BLOG_ROUTES: Routes = [
     {
-        path: 'dev', data: {breadcrumb: 'Developer Blog'},
+        path: 'dev', data: {breadcrumb: 'Blog'},
         loadChildren: () => import('./dev/developer-blog.module').then(m => m.DeveloperBlogModule)
     },
     {
         path: 'game', data: {breadcrumb: 'Gaming Blog'},
         loadChildren: () => import('./gaming/gaming-blog.module').then(m => m.GamingBlogModule)
     },
-    {path: '**', redirectTo: 'dev'} // catch any unfound routes and redirect to dev blog page
+    {
+        path: 'chinese', data: {breadcrum: 'Chinese Blog'},
+        loadChildren: () => import('./chinese/chinese-blog.module').then(m => m.ChineseBlogModule)
+    },
+    {path: '**', redirectTo: 'chinese'} // catch any unfound routes and redirect to dev blog page
 ];
 
 @NgModule({

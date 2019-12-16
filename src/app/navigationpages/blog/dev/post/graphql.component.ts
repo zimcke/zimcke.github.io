@@ -10,11 +10,11 @@ import {PostCategory} from '../../../../core/enum/postCategory';
 export class GraphqlComponent extends AbstractBlogPost {
 
     postTitle(): string {
-        return 'GraphQL with Spring Boot + MongoDB';
+        return 'My books for 2020';
     }
 
     postDate(): Date {
-        return new Date(2019, 11, 10);
+        return new Date(2019, 12, 10);
     }
 
     postAbstract(): string {
