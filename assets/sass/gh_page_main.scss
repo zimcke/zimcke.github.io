@@ -1,0 +1,39 @@
+$root: "/";
+
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+@import "~bootstrap/scss/bootstrap";
+@import '~material-icons/iconfont/material-icons.css';
+
+@import "util/sizes";
+@import "util/breadcrumb";
+
+.btn-primary {
+    background-color: #8EB897;
+    border-color: #8EB897;
+}
+
+.btn-secondary {
+    background-color: #8EB897;
+    border-color: #8EB897;
+}
+
+a {
+  color: #6FC48A;  
+}
+
+a:hover {
+    color: #C3E8BD;
+}
+
+.bg-dark {
+    background-color: #6B415B !important;
+}
+
+.p-spaced {
+    line-height: 1.7em;
+}
+
+.p-chinese {
+    font-size: 30px;
+}
