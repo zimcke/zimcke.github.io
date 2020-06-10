@@ -1,10 +1,6 @@
 <xng-breadcrumb [hidden]="hideBreadcrumb()">
     <ng-container *xngBreadcrumbItem="let breadcrumb">
-<<<<<<< HEAD
         <span *ngIf="isHomeBreadcrumbItem(breadcrumb)" class="material-icons">home</span>
         <ng-container *ngIf="!isHomeBreadcrumbItem(breadcrumb)">{{ breadcrumb | capitalize }}</ng-container>
-=======
-        <ng-container>{{ breadcrumb | capitalize }}</ng-container>
->>>>>>> 0625518d1721656d8a5b62619edea3b19d60488f
     </ng-container>
 </xng-breadcrumb>
