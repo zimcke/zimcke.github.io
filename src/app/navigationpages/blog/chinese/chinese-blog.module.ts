@@ -7,11 +7,12 @@ import {WojiaComponent} from './post/wojia.component';
 import {Books2020Component} from './post/books2020.component';
 import { ExampreparationsComponent } from './post/exampreparations.component';
 import {EducationVocabularyComponent} from './post/education_vocabulary.component'; 
+import {HistoryOfCantopopComponent} from './post/history_of_cantopop.component';
 import { NgPiaoLiangHanziModule } from 'ng-piao-liang-hanzi';
 
 @NgModule({
     imports: [SharedModule, ChineseBlogRoutingModule,  NgPiaoLiangHanziModule],
-    exports: [ChineseBlogComponent, WojiaComponent, Books2020Component, ExampreparationsComponent, EducationVocabularyComponent],
+    exports: [ChineseBlogComponent, WojiaComponent, Books2020Component, ExampreparationsComponent, EducationVocabularyComponent, HistoryOfCantopopComponent],
     declarations: [ChineseBlogRoutingModule.components],
     providers: [{provide: 'CHINESE_ROUTES', useValue: CHINESE_BLOG_ROUTES}, {provide: 'ENABLE_BOTTOM_PINYIN', useValue: true}]
 })
