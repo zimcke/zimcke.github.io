@@ -1,9 +1,9 @@
-## GitHub Page - Alexander Tang
+## GitHub Page - Zimcke Van de Staey
 
-This projects contains everything needed to build [my GitHub page](https://alexandertang.github.io/). My webpage will contain
+This projects contains everything needed to build [my GitHub page](https://zimcke.github.io/). My webpage will contain
 posts about anything that I would like to share with the outside world, such as technical guides, projects, gaming news and more.
 
-You are free to re-use the project template.
+This template was forked from [Alexander Tang](https://alexanderTang.github.io/).
 
 ### Requirements
 
