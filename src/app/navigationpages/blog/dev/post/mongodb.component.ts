@@ -10,6 +10,7 @@ import {PostCategory} from '../../../../core/enum/postCategory';
 export class MongodbComponent extends AbstractBlogPost {
 
     postTitle(): string {
+<<<<<<< HEAD
         return "The effect of digital devices on language retention";
     }
 
@@ -27,6 +28,21 @@ export class MongodbComponent extends AbstractBlogPost {
 
     postCategories(): PostCategory[] {
         return [PostCategory.GraphQL];;
+=======
+        return undefined;
+    }
+
+    postDate(): Date {
+        return undefined;
+    }
+
+    postAbstract(): string {
+        return undefined;
+    }
+
+    postCategories(): PostCategory[] {
+        return [];
+>>>>>>> 0625518d1721656d8a5b62619edea3b19d60488f
     }
 
 }

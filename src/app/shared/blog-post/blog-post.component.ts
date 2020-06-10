@@ -29,7 +29,11 @@ export class BlogPostComponent {
 
     onSubmit(): void {
         this.document.location.href = mailtoLink({
+<<<<<<< HEAD
             to: 'zimcke@gmail.com',
+=======
+            to: 'alexanderghtang@gmail.com',
+>>>>>>> 0625518d1721656d8a5b62619edea3b19d60488f
             subject: this.mailSubject(),
             body: this.mailBody
         });

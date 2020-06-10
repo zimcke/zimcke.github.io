@@ -12,10 +12,13 @@ export class CustomBreadcrumbComponent {
     constructor(private activatedRoute: ActivatedRoute) {
     }
 
+<<<<<<< HEAD
     isHomeBreadcrumbItem(breadcrumbName: string): boolean {
         return breadcrumbName === 'Home';
     }
 
+=======
+>>>>>>> 0625518d1721656d8a5b62619edea3b19d60488f
     hideBreadcrumb(): boolean {
         try {
             return this.blacklistedPaths
